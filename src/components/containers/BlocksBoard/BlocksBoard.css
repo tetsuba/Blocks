@@ -1,0 +1,8 @@
+.block-board {
+    height: 445px;
+    width: 445px;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: darkgrey;
+    position: relative;
+}
