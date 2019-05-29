@@ -1,4 +1,4 @@
-import {includes, pipe} from 'ramda'
+import {includes, pipe, path, __} from 'ramda'
 
 export const getColour = () => {
     const random = Math.floor(Math.random() * 3)
@@ -30,32 +30,36 @@ export const matchBlocks = (state, block) => {
     return capture;
 };
 
+export const getBlockPositionValue = (props) => ({
+    ...props,
+    position: includes(props.direction, ['top', 'bottom'])
+        ? path(['block', 'position', 1], props)
+        : path(['block', 'position', 0], props)
+});
+
 export const getBlockIndex = (props) => {
-    const {direction, state} = props;
-    const [y, x] = props.block.position;
-    const isXPos = direction === 'top' || direction === 'bottom';
-    const value = isXPos ? x : y;
+    const {direction, state, position} = props;
 
     switch(direction) {
         case 'top':
         case 'left': {
             return {
                 ...props,
-                index: (value > 0) ? value - 1 : 0
+                index: (position > 0) ? position - 1 : 0
             };
         }
         case 'bottom':
         case 'right': {
             return {
                 ...props,
-                index: (value < state.matrix - 1) ? value + 1 : state.matrix - 1
+                index: (position < state.matrix - 1) ? position + 1 : state.matrix - 1
             };
         }
         default:
             console.error('ERROR: ', direction);
             return null;
     }
-}
+};
 
 export const getBlock = (props) => {
     const {state, block, direction, index} = props;
@@ -99,12 +103,11 @@ export const captureBlock = (props) => {
     return nextBlock
 };
 
-export const findNextBlock = pipe(getBlockIndex, getBlock, isBlockCaptured, captureBlock);
+export const findNextBlock = pipe(getBlockPositionValue, getBlockIndex, getBlock, isBlockCaptured, captureBlock);
 
 export const engine = (state, block) => {
     ['top', 'left', 'bottom', 'right']
         .forEach((direction) => {
-            // const nextBlock = searchForBlock(state, block, direction);
             const nextBlock = findNextBlock({state, block, direction});
             if (nextBlock) {
                 capture.push(nextBlock);

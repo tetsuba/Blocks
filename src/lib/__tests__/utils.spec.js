@@ -27,25 +27,25 @@ describe('@UTILS', () => {
             };
 
             test('should return index 0 if direction is top', () => {
-                const props = {...initProps, direction: 'top'};
+                const props = {...initProps, direction: 'top', position: 0};
                 const expected = 0;
                 expect(getBlockIndex(props).index).toEqual(expected)
             });
 
             test('should return index 0 if direction is left', () => {
-                const props = {...initProps, direction: 'left'};
+                const props = {...initProps, direction: 'left', position: 0};
                 const expected = 0;
                 expect(getBlockIndex(props).index).toEqual(expected)
             });
 
             test('should return index 1 if direction is right', () => {
-                const props = {...initProps, direction: 'right'};
+                const props = {...initProps, direction: 'right', position: 0};
                 const expected = 1;
                 expect(getBlockIndex(props).index).toEqual(expected)
             });
 
             test('should return index 1 if direction is bottom', () => {
-                const props = {...initProps, direction: 'bottom'};
+                const props = {...initProps, direction: 'bottom', position: 0};
                 const expected = 1;
                 expect(getBlockIndex(props).index).toEqual(expected)
             });
@@ -64,25 +64,25 @@ describe('@UTILS', () => {
                 },
             };
             test('should return index 0 if direction is top', () => {
-                const props = {...initProps, direction: 'top'};
+                const props = {...initProps, direction: 'top', position: 0};
                 const expected = 0;
                 expect(getBlockIndex(props).index).toEqual(expected)
             });
 
             test('should return index 3 if direction is left', () => {
-                const props = {...initProps, direction: 'left'};
+                const props = {...initProps, direction: 'left', position: 4};
                 const expected = 3;
                 expect(getBlockIndex(props).index).toEqual(expected)
             });
 
             test('should return index 4 if direction is right', () => {
-                const props = {...initProps, direction: 'right'};
+                const props = {...initProps, direction: 'right', position: 4};
                 const expected = 4;
                 expect(getBlockIndex(props).index).toEqual(expected)
             });
 
             test('should return index 1 if direction is bottom', () => {
-                const props = {...initProps, direction: 'bottom'};
+                const props = {...initProps, direction: 'bottom', position: 0};
                 const expected = 1;
                 expect(getBlockIndex(props).index).toEqual(expected)
             });
@@ -101,22 +101,22 @@ describe('@UTILS', () => {
                 },
             };
             test('should return index 1 if direction is top', () => {
-                const props = {...initProps, direction: 'top'};
+                const props = {...initProps, direction: 'top', position: 2};
                 const expected = 1;
                 expect(getBlockIndex(props).index).toEqual(expected)
             });
             test('should return index 1 if direction is left', () => {
-                const props = {...initProps, direction: 'left'};
+                const props = {...initProps, direction: 'left', position: 2};
                 const expected = 1;
                 expect(getBlockIndex(props).index).toEqual(expected)
             });
             test('should return index 3 if direction is right', () => {
-                const props = {...initProps, direction: 'right'};
+                const props = {...initProps, direction: 'right', position: 2};
                 const expected = 3;
                 expect(getBlockIndex(props).index).toEqual(expected)
             });
             test('should return index 3 if direction is bottom', () => {
-                const props = {...initProps, direction: 'bottom'};
+                const props = {...initProps, direction: 'bottom', position: 2};
                 const expected = 3;
                 expect(getBlockIndex(props).index).toEqual(expected)
             });
@@ -136,25 +136,25 @@ describe('@UTILS', () => {
             };
 
             test('should return index 3 if direction is top', () => {
-                const props = {...initProps, direction: 'top'};
+                const props = {...initProps, direction: 'top', position: 4};
                 const expected = 3;
                 expect(getBlockIndex(props).index).toEqual(expected)
             });
 
             test('should return index 0 if direction is left', () => {
-                const props = {...initProps, direction: 'left'};
+                const props = {...initProps, direction: 'left', position: 0};
                 const expected = 0;
                 expect(getBlockIndex(props).index).toEqual(expected)
             });
 
             test('should return index 1 if direction is right', () => {
-                const props = {...initProps, direction: 'right'};
+                const props = {...initProps, direction: 'right', position: 0};
                 const expected = 1;
                 expect(getBlockIndex(props).index).toEqual(expected)
             });
 
             test('should return index 4 if direction is bottom', () => {
-                const props = {...initProps, direction: 'bottom'};
+                const props = {...initProps, direction: 'bottom', position: 4};
                 const expected = 4;
                 expect(getBlockIndex(props).index).toEqual(expected)
             });
@@ -173,22 +173,22 @@ describe('@UTILS', () => {
                 },
             };
             test('should return index 3 if direction is top', () => {
-                const props = {...initProps, direction: 'top'};
+                const props = {...initProps, direction: 'top', position: 4};
                 const expected = 3;
                 expect(getBlockIndex(props).index).toEqual(expected)
             });
             test('should return index 3 if direction is left', () => {
-                const props = {...initProps, direction: 'left'};
+                const props = {...initProps, direction: 'left', position: 4};
                 const expected = 3;
                 expect(getBlockIndex(props).index).toEqual(expected)
             });
             test('should return index 4 if direction is right', () => {
-                const props = {...initProps, direction: 'right'};
+                const props = {...initProps, direction: 'right', position: 4};
                 const expected = 4;
                 expect(getBlockIndex(props).index).toEqual(expected)
             });
             test('should return index 4 if direction is bottom', () => {
-                const props = {...initProps, direction: 'bottom'};
+                const props = {...initProps, direction: 'bottom', position: 4};
                 const expected = 4;
                 expect(getBlockIndex(props).index).toEqual(expected)
             });
